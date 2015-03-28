@@ -241,12 +241,16 @@ private:
         const kb    = input_.keyboard;
         const mouse = input_.mouse;
 
+        const zoomIn = kb.pressed(Key.Equals) || kb.pressed(Key.Plus) || kb.pressed(Key.W);
+        const zoomOut = kb.pressed(Key.Minus) || kb.pressed(Key.S);
+
         // Zooming ('=' is the same key as '+' on most (at least QWERTY) keyboards).
-        const zoomKb = (kb.pressed(Key.Equals) ? 1 : 0) + (kb.pressed(Key.Minus) ? -1 : 0);
+        const zoomKb = (zoomIn ? 1 : 0) + (zoomOut ? -1 : 0);
         zoomExponent_ = min(40, max(-8, zoomExponent_ + mouse.wheelYMovement + zoomKb));
         // Panning
         pan_ -= 128 * ((kb.pressed(Key.D) ? 1 : 0) + (kb.pressed(Key.A) ? -1 : 0)) / zoom;
-        if(mouse.button(Mouse.Button.Right)) { pan_ += mouse.xMovement / zoom; }
+        const mousePanning = mouse.button(Mouse.Button.Left) || mouse.button(Mouse.Button.Right);
+        if(mousePanning) { pan_ += mouse.xMovement / zoom; }
     }
 
     /** Render (and handle input from) the actions sidebar.
