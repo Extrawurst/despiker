@@ -6,14 +6,13 @@
     "libs-posix": ["dl", "glfw"],
     "license": "Boost 1.0",
     "dependencies": {
-        "tharsis-dimgui": ">=0.1.8-alpha",
+        "tharsis-dimgui": {"version": "~master", "path": "submodules/tharsis-dimgui/"},
         "derelict-gl3":   ">=1.0.4",
         "derelict-sdl2":  ">=1.2.5",
-        "dyaml":          ">=0.5.0",
+        "dyaml":            {"version": "~master", "path": "submodules/d-yaml/"},
         "gl3n":           "~master",
-        "gfm:math":       "==1.1.8",
-        "logger":         "==0.2.9",
-        "tharsis-prof":   "~>0.5.2"
+        "gfm:math":         {"version": "~master", "path": "submodules/gfm/"},
+        "tharsis-prof":     {"version": "~master", "path": "submodules/tharsis.prof/"},
     },
     "subConfigurations": {
         "tharsis-dimgui": "derelict-gl-library",

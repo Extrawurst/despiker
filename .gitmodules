@@ -1,0 +1,12 @@
+[submodule "submodules/tharsis.prof"]
+	path = submodules/tharsis.prof
+	url = https://github.com/Extrawurst/tharsis.prof.git
+[submodule "submodules/gfm"]
+	path = submodules/gfm
+	url = https://github.com/d-gamedev-team/gfm.git
+[submodule "submodules/d-yaml"]
+	path = submodules/d-yaml
+	url = https://github.com/soarqin/D-YAML.git
+[submodule "submodules/tharsis-dimgui"]
+	path = submodules/tharsis-dimgui
+	url = https://github.com/Extrawurst/tharsis-dimgui.git

@@ -614,7 +614,7 @@ private:
 
     // Source of the shader used for drawing.
     enum shaderSrc =
-      q{#version 130
+      q{#version 150
         #if VERTEX_SHADER
             uniform mat4 projection;
             in vec2 position;
@@ -727,12 +727,14 @@ public:
         {
             log_.error("Failed to construct zone view GLSL program or to load uniforms "
                        "from the program. Zone view will not be drawn.").assumeWontThrow;
-            log_.error(e).assumeWontThrow;
+            //TODO: this does not work with current std.experimental.logger
+            //log_.error(e).assumeWontThrow;
             program_ = null;
         }
         catch(Exception e)
         {
-            log_.error(e).assumeWontThrow;
+            //TODO: this does not work with current std.experimental.logger
+            //log_.error(e.toString()).assumeWontThrow;
             assert(false, "Unexpected exception in ViewRenderer.this()");
         }
 

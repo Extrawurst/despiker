@@ -61,7 +61,7 @@ final class OpenGL
             {
                 throw new OpenGLException(e.msg, __FILE__, __LINE__, e);
             }
-            
+
 
             //DerelictGL.load(); // load deprecated functions too
 
@@ -69,7 +69,8 @@ final class OpenGL
 
             // do not log here since unimportant errors might happen:
             // no context is necessarily created at this point
-            getLimits(false); 
+            //TODO: this makes the app hang forever and crash in glGetError
+            //getLimits(false); 
 
             _textureUnits = new TextureUnits(this);
         }

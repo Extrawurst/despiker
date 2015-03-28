@@ -95,7 +95,7 @@ int main(string[] args)
     }
 
 
-    auto log = stdlog;
+    auto log = new FileLogger(stdout);
 
     import despiker.profdatasource: ProfDataSource,
                                     ProfDataSourceRaw,
